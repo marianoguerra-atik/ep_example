@@ -8,6 +8,8 @@ An example using [Erlang Protocols](https://github.com/marianoguerra/ep/)
 rebar3 shell
 ```
 
+### Compile-time Consolidation
+
 ```erlang
 1> consy:first([1, 2, 3]).
 1
