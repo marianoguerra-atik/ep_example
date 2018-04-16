@@ -31,3 +31,18 @@ ok
 #tuple {1,2,3}
 ok
 ```
+
+See `src/ep_example_list.erl` and `src/ep_example_tuple.erl` for details, but here's an example:
+
+```erlang
+-module(ep_example_list).
+
+-ep({printable, #{to_string => my_to_string/1}}).
+-ep({consy, #{first => first/1, rest => consy_rest/1}}).
+
+my_to_string(V) when is_list(V) -> io_lib:format("#list ~p", [V]).
+
+
+first(L=[H | _]) when is_list(L) -> H.
+consy_rest([_ | T]) -> T.
+```
