@@ -2,6 +2,21 @@
 
 An example using [Erlang Protocols](https://github.com/marianoguerra/ep/)
 
+For examples of protocol declarations check:
+
+* src/ep_example_printable.erl
+
+  + Contains example of default implementation for native types
+
+* src/ep_example_consy.erl
+
+  + Just protocol declaration
+
+For examples of protocol implementations check:
+
+* src/ep_example_tuple.erl
+* src/ep_example_list.erl
+
 ## Try
 
 ```
@@ -30,6 +45,13 @@ ok
 6> io:format("~s~n", [printable:to_string({1, 2, 3})]).
 #tuple {1,2,3}
 ok
+
+7> printable:to_string(1).
+<<"1">>
+
+8> printable:to_string(atom).
+<<"atom">>
+
 ```
 
 ### Dynamic Dispatching
